@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escuela de Música Online</title>
+    <link rel="icon" href="imagenes/logodemusica.png" type="image/png">
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>
+    <header>
+        <img src="imagenes/logodemusica.png" alt="Logo de la Escuela" class="logo">
+        <h1>Escuela de Música Online</h1>
+        <nav>
+            <ul>
+                <li><a href="#courses">Cursos</a></li>
+                <li><a href="#about">Sobre Nosotros</a></li>
+                <li><a href="#employees">Empleados</a></li>
+                <li><a href="portafolio.html">Portafolio</a></li>
+                <li><a href="portafolio.html #contact">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <section id="carousel" class="carousel">
+            <div class="carousel-images">
+                <img src="https://humanidades.com/wp-content/uploads/2018/08/Musica-guitarra-min-e1533568423594-800x400.jpg"
+                    alt="Imagen 1">
+                <img src="https://thumbs.dreamstime.com/b/tambor-vector-maracas-xylophone-tambourine-trompeta-de-viento-saxof%C3%B3n-clarinete-tromb%C3%B3n-guitarra-banjo-ukulele-instrumentos-276118255.jpg"
+                    alt="Imagen 2">
+                <img src="https://canal12web.com/wp-content/uploads/2023/01/musica-e1584123203510-800x400-1.jpg"
+                    alt="Imagen 3">
+                <img src="https://img.lovepik.com/bg/20240424/Background-of-3D-Rendered-Musical-Instruments_7234557_wh860.jpg!/fw/860"
+                    alt="Imagen 4">
+            </div>
+            <button class="carousel-button prev" onclick="prevSlide()">&#10094;</button>
+            <button class="carousel-button next" onclick="nextSlide()">&#10095;</button>
+        </section>
+
+        <section id="courses" class="courses">
+            <h2>Nuestros Cursos</h2>
+            <div class="course-item">
+                <h3>Curso de Guitarra para Principiantes</h3>
+                <p>Aprende a tocar la guitarra desde cero con lecciones paso a paso.</p>
+            </div>
+            <div class="course-item">
+                <h3>Curso de Piano Avanzado</h3>
+                <p>Perfecciona tus habilidades en el piano con técnicas avanzadas.</p>
+            </div>
+            <div class="course-item">
+                <h3>Curso de Teoría Musical</h3>
+                <p>Entiende los conceptos fundamentales de la teoría musical.</p>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <h2>Sobre Nosotros</h2>
+            <p>En nuestra escuela de música online, ofrecemos una amplia gama de cursos diseñados para músicos de todos
+                los niveles. Nuestro equipo de instructores está compuesto por profesionales experimentados que están
+                dedicados a ayudarte a alcanzar tus objetivos musicales.</p>
+        </section>
+
+        <section id="employees" class="employees">
+            <h2>Conoce a Nuestro Equipo</h2>
+            <div class="employee-item">
+                <img src="https://churchofjesuschrist.org/imgs/ad760ce5b20c11ed89b8eeeeac1e99075418ff19/full/500%2C/0/default"
+                    alt="Empleado 1">
+                <h3>Jefry Gomez</h3>
+                <p>Instructor de Guitarra. Con más de 10 años de experiencia, Jefry es un experto en técnicas de
+                    guitarra y composición.</p>
+            </div>
+            <div class="employee-item">
+                <img src="https://www.uoh.cl/wp-content/uploads/2022/11/Paula-Farias-500x500.jpg" alt="Empleado 2">
+                <h3>Beatriz Palomino</h3>
+                <p>Instructora de Piano. Beatriz tiene una formación en música clásica y jazz, y ofrece clases tanto
+                    para principiantes como para avanzados.</p>
+            </div>
+            <div class="employee-item">
+                <img src="https://www.bakon.com/wp-content/uploads/2021/06/BAKON-Ronald-Gijssel-.jpg" alt="Empleado 3">
+                <h3>Pablo Gonzalez</h3>
+                <p>Especialista en Teoría Musical. Pablo se enfoca en ayudar a los estudiantes a entender la teoría
+                    detrás de la música y la composición.</p>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <div class="address">
+            <p>Dirección: Calle Invisible #32 - 01, Cartagena, Colombia.</p>
+        </div>
+        <div class="social-media">
+            <a href="https://facebook.com" target="_blank">Facebook</a>
+            <a href="https://twitter.com" target="_blank">Twitter</a>
+            <a href="https://instagram.com" target="_blank">Instagram</a>
+            <a href="https://youtube.com" target="_blank">YouTube</a>
+        </div>
+        <p>&copy; 2024 Escuela de Música Online. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.carousel-images img');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            if (index >= totalSlides) slideIndex = 0;
+            if (index < 0) slideIndex = totalSlides - 1;
+            document.querySelector('.carousel-images').style.transform = `translateX(-${slideIndex * 100}%)`;
+        }
+
+        function nextSlide() {
+            slideIndex++;
+            showSlide(slideIndex);
+        }
+
+        function prevSlide() {
+            slideIndex--;
+            showSlide(slideIndex);
+        }
+
+        showSlide(slideIndex);
+    </script>
+</body>
+
+</html>
